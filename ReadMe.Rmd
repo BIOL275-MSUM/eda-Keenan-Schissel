@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ## Abstract
-The state of Minnesota is ranked number 10 in the United States for Health care andranked number 18 for its economic status. These are some very great and very high numbers but how do the counties fair on an individual level? The number 1 county in overall health in Minnesota as of right now is Carver county while the lowest ranked county is Mahnomen county. I plan to do an exploratory data analysis and compare these two counties in their Social and economic factors and their quality of life to see if there is a correlation between the two. The data set that i will be obtaining this information from is County Health Rankings and Roadmaps. With my results from this, I plan to see whether or not the economic and social factors in counties play a role in quality of life
+The state of Minnesota is ranked number 10 in the United States for Health care and ranked number 18 for its economic status. These are some very great and very high numbers but how do the counties fair on an individual level? The number 1 county in overall health in Minnesota as of right now is Carver county while the lowest ranked county is Mahnomen county. I plan to do an exploratory data analysis and compare these two counties in their Social and economic factors and their quality of life to see if there is a correlation between the two. The data set that i will be obtaining this information from is County Health Rankings and Roadmaps. With my results from this, I plan to see whether or not the economic and social factors in counties play a role in quality of life
 ## Introduction
 
 ## Methods
