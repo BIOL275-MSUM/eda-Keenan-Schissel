@@ -11,23 +11,23 @@ library(ggplot2)
 #Read Data
 
 download_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v1_0 (1).xlsx",
-    sheet= "Ranked Measure Data", skip=1)
+                            sheet= "Ranked Measure Data", skip=1)
 
 download_data
 
 glimpse(download_data)
 
 
-Ranked_meas_data <- transmute(
-download_data,
+Ranked_meas_data <- select(
+  download_data,
   FIPS,
   State,
   County,
   Deaths,
-  violent_crime = 'Violent Crime Rate' ,
- FP_health = 'Fair or poor Health' ,
-  Unemployment = '% Unemployed' ,
-  Income = 'Income Ratio' 
+  violent_crime = `Violent Crime Rate` ,
+  FP_health = `% Fair or Poor Health` ,
+  Unemployment = `% Unemployed` ,
+  Income = `Income Ratio` 
 )
 
 Ranked_meas_data
@@ -36,8 +36,8 @@ Ranked_meas_data
 
 
 Ranked_meas_data %>%
-  filter(!is.na(Count)) %>%  
-  select(-FIPS,-State,-County,-Deaths) %>%
+  filter(!is.na(County)) %>%  
+  select(-FIPS,-State,-County) %>%
   cor(use = "na.or.complete") %>% 
   corrplot(
     method = "color",

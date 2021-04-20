@@ -28,6 +28,65 @@ _Finally I used the glimpse function in order to preview the data and then used 
 
 ## Results
 
+```{r}
+#Load PAckages
+
+library(tidyverse)
+
+library(readxl)
+
+
+library(corrplot)
+library(ggplot2)
+#Read Data
+
+download_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v1_0 (1).xlsx",
+                            sheet= "Ranked Measure Data", skip=1)
+
+
+
+
+Ranked_meas_data <- transmute(
+  download_data,
+  FIPS,
+  State,
+  County,
+  Deaths,
+  violent_crime = 'Violent Crime Rate' ,
+  FP_health = 'Fair or poor Health' ,
+  Unemployment = '% Unemployed' ,
+  Income = 'Income Ratio' 
+)
+
+
+# plot------------------------------------------------------------------------
+
+
+Ranked_meas_data %>%
+  filter(!is.na(Count)) %>%  
+  select(-FIPS,-State,-County,-Deaths) %>%
+  cor(use = "na.or.complete") %>% 
+  corrplot(
+    method = "color",
+    type = "upper",
+    order = "hclust",
+    tl.col ="black" ,
+    tl.srt = 45 ,
+    addCoef.col = "black"
+  )  
+
+ggplot(Ranked_meas_data, aes(x = violent_crime, y= FP_health )) +
+  geom_point() +
+  geom_smooth(method = lm, se = TRUE)
+
+ggplot( Ranked_meas_data, aes(x = Unemployment, y = Income)) +
+  geom_point() +
+  geom_smooth(method = lm, se = TRUE)
+```
+
+
+
+
 ## Discussion
 In conclusion Figure 1 and 2 show that there is quite a significant correlation between violent crimes and fair or poor health in a county and also a somewhat strong relation between Income and unemployment . This can imply that Social and economic factors have a impact on ones quality of life in a certain county making my original hypothesis true. Now knowing these results we can try and further help these lower social and economic counties in order to help improve their quality of life so they don't keep falling behind the standard of living.
 ## Literature Cited
