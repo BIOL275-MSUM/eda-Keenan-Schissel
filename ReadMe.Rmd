@@ -7,8 +7,9 @@ output: html_document
 
 ## Abstract
 The state of Minnesota is ranked number 10 in the United States for Health care and ranked number 18 for its economic status. These are some very great and very high numbers but how do the counties fair on an individual level? The number 1 county in overall health in Minnesota as of right now is Carver county while the lowest ranked county is Mahnomen county. I plan to do an exploratory data analysis and compare these two counties in their Social and economic factors and their quality of life to see if there is a correlation between the two. The data set that i will be obtaining this information from is County Health Rankings and Roadmaps. With my results from this, I plan to see whether or not the economic and social factors in counties play a role in quality of life
-## Introduction
 
+## Introduction
+There are several counties that can be considered either above or below the average standard of living. These counties can be usually seen by the comparison of the counties overall income, unemployment and the crime rate that happens within their community. This has led to a big conclusion among people that these factors tie within the quality of life that these people in a certain have to endure. But is this entirely true? Perhaps there may be other leading causes just beside these factors. In my hypothesis, I believe that these factors have the most impact on dictating the quality of life for a county. If my hypothesis is to be true, then we would be able to narrow down the immediate impact factors and try to help these lower quality of life counties across america.
 ## Methods
 
 ### Data Acquisition
@@ -28,7 +29,7 @@ _Finally I used the glimpse function in order to preview the data and then used 
 ## Results
 
 ## Discussion
-
+In conclusion Figure 1 and 2 show that there is quite a significant correlation between violent crimes and fair or poor health in a county and also a somewhat strong relation between Income and unemployment . This can imply that Social and economic factors have a impact on ones quality of life in a certain county making my original hypothesis true. Now knowing these results we can try and further help these lower social and economic counties in order to help improve their quality of life so they don't keep falling behind the standard of living.
 ## Literature Cited
 
 University of Wisconsin Population Health Institute. County Health Rankings 2020.     Available at www.countyhealthrankings.org. Accessed 3/4/2020.
