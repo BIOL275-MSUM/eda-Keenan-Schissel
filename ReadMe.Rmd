@@ -5,6 +5,11 @@ date: "2/23/2021"
 output: github_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+```
+
+
 ## Abstract
 The state of Minnesota is ranked number 10 in the United States for Health care and ranked number 18 for its economic status. These are some very great and very high numbers but how do the counties fair on an individual level? The number 1 county in overall health in Minnesota as of right now is Carver county while the lowest ranked county is Mahnomen county. I plan to do an exploratory data analysis and compare these two counties in their Social and economic factors and their quality of life to see if there is a correlation between the two. The data set that i will be obtaining this information from is County Health Rankings and Roadmaps. With my results from this, I plan to see whether or not the economic and social factors in counties play a role in quality of life
 
@@ -45,17 +50,16 @@ download_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v
 
 
 
-
-Ranked_meas_data <- transmute(
+Ranked_meas_data <- select(
   download_data,
   FIPS,
   State,
   County,
   Deaths,
-  violent_crime = 'Violent Crime Rate' ,
-  FP_health = 'Fair or poor Health' ,
-  Unemployment = '% Unemployed' ,
-  Income = 'Income Ratio' 
+  violent_crime = `Violent Crime Rate` ,
+  FP_health = `% Fair or Poor Health` ,
+  Unemployment = `% Unemployed` ,
+  Income = `Income Ratio` 
 )
 
 
@@ -63,8 +67,8 @@ Ranked_meas_data <- transmute(
 
 
 Ranked_meas_data %>%
-  filter(!is.na(Count)) %>%  
-  select(-FIPS,-State,-County,-Deaths) %>%
+  filter(!is.na(County)) %>%  
+  select(-FIPS,-State,-County) %>%
   cor(use = "na.or.complete") %>% 
   corrplot(
     method = "color",

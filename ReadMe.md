@@ -54,6 +54,8 @@ studio Finally, I read the data in R
 
 ## Results
 
+![](ReadMe_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->![](ReadMe_files/figure-gfm/unnamed-chunk-1-2.png)<!-- -->![](ReadMe_files/figure-gfm/unnamed-chunk-1-3.png)<!-- -->
+
 ## Discussion
 
 In conclusion Figure 1 and 2 show that there is quite a significant
