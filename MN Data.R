@@ -24,10 +24,10 @@ download_data,
   State,
   County,
   Deaths,
-  violent_crime = 'violent Crime Rate' ,
+  violent_crime = 'Violent Crime Rate' ,
  FP_health = 'Fair or poor Health' ,
   Unemployment = '% Unemployed' ,
-  Income = 'Income Ratio' ,
+  Income = 'Income Ratio' 
 )
 
 Ranked_meas_data

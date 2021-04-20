@@ -2,7 +2,7 @@
 title: "Social and Economic factors of Counties in Minnesota"
 author: "Keenan Schissel"
 date: "2/23/2021"
-output: html_document
+output: github_document
 ---
 
 ## Abstract
